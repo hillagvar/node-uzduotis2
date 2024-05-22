@@ -23,7 +23,7 @@ const server = http.createServer((req,res) => {
 
             res.setHeader("Content-Type", "text/html; charset=utf-8");
             let template = fs.readFileSync("templates/result.html").toString();
-            let out = template.replace("{{ result }}" , `Rezultatas: ${cm*2.54} inch`)
+            let out = template.replace("{{ result }}" , `Rezultatas: ${cm/2.54} inch`)
             res.write(out);
             res.end();
         });
@@ -47,7 +47,7 @@ const server = http.createServer((req,res) => {
 
             res.setHeader("Content-Type", "text/html; charset=utf-8");
             let template = fs.readFileSync("templates/result.html").toString();
-            let out = template.replace("{{ result }}" , `Rezultatas: ${inch/2.54} cm`)
+            let out = template.replace("{{ result }}" , `Rezultatas: ${inch*2.54} cm`)
             res.write(out);
             res.end();
         });
